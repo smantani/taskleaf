@@ -106,3 +106,290 @@
   [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 01:24:19.868283"], ["updated_at", "2019-05-02 01:24:19.868283"], ["user_id", 8]]
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (7.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (6.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$5oApvnIgbFuE3i9DXuK3m.G.WK4C8zNlVt5lRH4j00XDr6cPeqkUq"], ["created_at", "2019-05-02 10:40:58.591972"], ["updated_at", "2019-05-02 10:40:58.591972"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (6.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 10:40:58.712980"], ["updated_at", "2019-05-02 10:40:58.712980"], ["user_id", 9]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$BaOSpJWPZ9HbMX3VZBPA.OgG4eTH/KG0JdPDUsniwSa6reyO4lqS."], ["created_at", "2019-05-02 10:50:45.689766"], ["updated_at", "2019-05-02 10:50:45.689766"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 10:50:45.715631"], ["updated_at", "2019-05-02 10:50:45.715631"], ["user_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-05-02 19:50:46 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (49.3ms)
+Completed 200 OK in 2793ms (Views: 2771.8ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-a7e57cfa15245647aec5dae713ff2091a851d4b12eb94b3c80eb41c1e06f4f5a.css" for 127.0.0.1 at 2019-05-02 19:50:49 +0900
+Started GET "/assets/application-8f795d832dd72aa88718936494787860e843da5369e86f734282be69f7989b96.js" for 127.0.0.1 at 2019-05-02 19:50:49 +0900
+Started POST "/login" for 127.0.0.1 at 2019-05-02 19:50:50 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"a@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:49595/
+Completed 302 Found in 11ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2019-05-02 19:50:50 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (3.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 10]]
+  Rendered tasks/index.html.slim within layouts/application (49.8ms)
+Completed 200 OK in 81ms (Views: 52.8ms | ActiveRecord: 3.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$UUwyyf.dHWqHmR9yUh/X.OLIZQqjlahp.sKKG5P7h2VIoVg5.7Zce"], ["created_at", "2019-05-02 11:09:48.636771"], ["updated_at", "2019-05-02 11:09:48.636771"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 11:09:48.665779"], ["updated_at", "2019-05-02 11:09:48.665779"], ["user_id", 11]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-05-02 20:09:49 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (46.3ms)
+Completed 200 OK in 697ms (Views: 677.8ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-a7e57cfa15245647aec5dae713ff2091a851d4b12eb94b3c80eb41c1e06f4f5a.css" for 127.0.0.1 at 2019-05-02 20:09:50 +0900
+Started GET "/assets/application-8f795d832dd72aa88718936494787860e843da5369e86f734282be69f7989b96.js" for 127.0.0.1 at 2019-05-02 20:09:50 +0900
+Started POST "/login" for 127.0.0.1 at 2019-05-02 20:09:50 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"a@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:49688/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:09:50 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 11]]
+  Rendered tasks/index.html.slim within layouts/application (16.9ms)
+Completed 200 OK in 42ms (Views: 20.2ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$HM3GE1PYXT1L016kZMY2Aeyrn0Rr0Gd8ZyZSI7KQvbcpCqwXDwBK2"], ["created_at", "2019-05-02 11:09:51.076461"], ["updated_at", "2019-05-02 11:09:51.076461"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 11:09:51.080320"], ["updated_at", "2019-05-02 11:09:51.080320"], ["user_id", 12]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "b@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーB"], ["email", "b@example.com"], ["password_digest", "$2a$04$DkLLCLkQbShqp.XdskE44OB4E9BI6w0h6sWuQZoReRWXQVj.jT1TS"], ["created_at", "2019-05-02 11:09:51.084315"], ["updated_at", "2019-05-02 11:09:51.084315"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-05-02 20:09:51 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2019-05-02 20:09:51 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"b@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "b@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:49688/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:09:51 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 13]]
+  Rendered tasks/index.html.slim within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$6ZUqIU9/FpgeoybE5RaSMebW70xv7IwuB4CJuFdNMWWycwr3JxHmC"], ["created_at", "2019-05-02 11:27:13.963114"], ["updated_at", "2019-05-02 11:27:13.963114"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 11:27:13.983671"], ["updated_at", "2019-05-02 11:27:13.983671"], ["user_id", 14]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-05-02 20:27:14 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (40.6ms)
+Completed 200 OK in 665ms (Views: 648.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-a7e57cfa15245647aec5dae713ff2091a851d4b12eb94b3c80eb41c1e06f4f5a.css" for 127.0.0.1 at 2019-05-02 20:27:15 +0900
+Started GET "/assets/application-8f795d832dd72aa88718936494787860e843da5369e86f734282be69f7989b96.js" for 127.0.0.1 at 2019-05-02 20:27:15 +0900
+Started POST "/login" for 127.0.0.1 at 2019-05-02 20:27:16 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"a@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:49778/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:27:16 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 14]]
+  Rendered tasks/index.html.slim within layouts/application (17.1ms)
+Completed 200 OK in 47ms (Views: 20.7ms | ActiveRecord: 1.3ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$SgcL0AjWthACkEDGdicYmONGQhqiaprskLG3lx4b1KZJniPnAJ/Ue"], ["created_at", "2019-05-02 11:27:16.387267"], ["updated_at", "2019-05-02 11:27:16.387267"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 11:27:16.390915"], ["updated_at", "2019-05-02 11:27:16.390915"], ["user_id", 15]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-05-02 20:27:16 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2019-05-02 20:27:16 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"a@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:49778/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:27:16 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 15]]
+  Rendered tasks/index.html.slim within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "b@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーB"], ["email", "b@example.com"], ["password_digest", "$2a$04$e7QOzFLP8QFO.0jig9.NRuW8BzTWil.MRCVQgejLOfLi8CVnJcsVS"], ["created_at", "2019-05-02 11:27:16.708174"], ["updated_at", "2019-05-02 11:27:16.708174"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$Gd5xwki96sgWwmxyWcD5LO9A9CNU4ScpJtbtegcqc9y4ss3Jopr2."], ["created_at", "2019-05-02 11:45:43.140050"], ["updated_at", "2019-05-02 11:45:43.140050"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 11:45:43.160630"], ["updated_at", "2019-05-02 11:45:43.160630"], ["user_id", 17]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-05-02 20:45:44 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (46.4ms)
+Completed 200 OK in 748ms (Views: 729.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-a7e57cfa15245647aec5dae713ff2091a851d4b12eb94b3c80eb41c1e06f4f5a.css" for 127.0.0.1 at 2019-05-02 20:45:44 +0900
+Started GET "/assets/application-8f795d832dd72aa88718936494787860e843da5369e86f734282be69f7989b96.js" for 127.0.0.1 at 2019-05-02 20:45:44 +0900
+Started POST "/login" for 127.0.0.1 at 2019-05-02 20:45:45 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"a@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:49834/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:45:45 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 17]]
+  Rendered tasks/index.html.slim within layouts/application (19.4ms)
+Completed 200 OK in 42ms (Views: 23.4ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$hnV6RTliroXedsj7sNDscO9GGATs9dYI9NgSZgKACt9s7MRl7FppC"], ["created_at", "2019-05-02 11:45:45.702841"], ["updated_at", "2019-05-02 11:45:45.702841"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 11:45:45.705905"], ["updated_at", "2019-05-02 11:45:45.705905"], ["user_id", 18]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-05-02 20:45:45 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "b@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーB"], ["email", "b@example.com"], ["password_digest", "$2a$04$abZd4VUoubTUs9OudH9wH.z47tpHilMTJ9VOp6utdG9oRrhQIh65y"], ["created_at", "2019-05-02 11:45:45.747762"], ["updated_at", "2019-05-02 11:45:45.747762"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2019-05-02 20:45:46 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"b@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "b@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:49834/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:45:46 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 19]]
+  Rendered tasks/index.html.slim within layouts/application (1.5ms)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "b@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$66gzCrra3nmw6CAinAUAnuLyYcOtmxqLfrRbNCQopN1L8RPmZc6mS"], ["created_at", "2019-05-02 11:46:35.830172"], ["updated_at", "2019-05-02 11:46:35.830172"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 11:46:35.856990"], ["updated_at", "2019-05-02 11:46:35.856990"], ["user_id", 20]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-05-02 20:46:36 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (39.8ms)
+Completed 200 OK in 711ms (Views: 693.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-8f795d832dd72aa88718936494787860e843da5369e86f734282be69f7989b96.js" for 127.0.0.1 at 2019-05-02 20:46:37 +0900
+Started GET "/assets/application-a7e57cfa15245647aec5dae713ff2091a851d4b12eb94b3c80eb41c1e06f4f5a.css" for 127.0.0.1 at 2019-05-02 20:46:37 +0900
+Started POST "/login" for 127.0.0.1 at 2019-05-02 20:46:38 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"a@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:49851/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:46:38 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 20]]
+  Rendered tasks/index.html.slim within layouts/application (18.9ms)
+Completed 200 OK in 42ms (Views: 22.6ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーA"], ["email", "a@example.com"], ["password_digest", "$2a$04$4D.PsfyVjYpx4b1r/0bxBOTf9Dy5zkIiDmPMiz9/29Ixs3Cx/tCK6"], ["created_at", "2019-05-02 11:46:38.289117"], ["updated_at", "2019-05-02 11:46:38.289117"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "最初のタスク"], ["description", "RSpec & Capybara & FactoryBotを準備する"], ["created_at", "2019-05-02 11:46:38.292913"], ["updated_at", "2019-05-02 11:46:38.292913"], ["user_id", 21]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2019-05-02 20:46:38 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "b@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ユーザーB"], ["email", "b@example.com"], ["password_digest", "$2a$04$l8T0wAjNzwktMtqykdT0JuR.AEhO65wBZkmPIOwdB0tLSPQ1OkoU2"], ["created_at", "2019-05-02 11:46:38.332943"], ["updated_at", "2019-05-02 11:46:38.332943"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2019-05-02 20:46:38 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"b@example.com", "password"=>"[FILTERED]"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "b@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:49851/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:46:38 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 22]]
+  Rendered tasks/index.html.slim within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
